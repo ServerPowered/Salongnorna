@@ -1,0 +1,244 @@
+/* booking.css */
+
+/* Importera Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* Grundläggande stilar för bokningssidan */
+body {
+    margin: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Header och navigering */
+header {
+    background-color: #000000;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffff00; /* Gul text */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: #98ff98; /* Mintgrön vid hover */
+}
+
+/* Hero-sektionen för bokningssidan */
+.booking-hero {
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+}
+
+.booking-hero .hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.booking-hero .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.booking-hero .hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.booking-hero .hero-content p {
+    font-size: 24px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Bokningsformuläret */
+.booking {
+    max-width: 600px;
+    margin: 0 auto; /* Ta bort övre marginalen */
+    padding: 0; /* Ta bort padding */
+    background-color: transparent; /* Gör bakgrunden transparent */
+    position: relative; /* För att placera innehållet ovanpå bakgrunden */
+}
+
+/* Lägg till bakgrundsbild till kalenderområdet */
+.booking::before {
+    content: '';
+    background-image: url('tantraomslag.jpeg'); /* Se till att filnamnet och sökvägen är korrekt */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8; /* Justera opaciteten vid behov */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Placera bakgrundsbilden bakom innehållet */
+}
+
+/* Formulärstilar */
+.booking form {
+    padding: 20px; /* Lägg till padding för innehållet */
+    background-color: rgba(255, 255, 255, 0.9); /* Lätt genomskinlig bakgrund för bättre läsbarhet */
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.form-group input[readonly] {
+    background-color: #eeeeee;
+}
+
+button[type="submit"] {
+    background-color: #ffff00; /* Gul knapp */
+    color: #000000;
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #ffd700; /* Mörkare gul vid hover */
+    transform: translateY(-2px);
+}
+
+/* Kalenderstilar */
+#calendar-container {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Lätt genomskinlig för att visa bakgrundsbilden */
+    border-radius: 10px;
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#calendar-header h3 {
+    margin: 0;
+}
+
+#calendar-header button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333333;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-day {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+}
+
+.calendar-day.weekday {
+    font-weight: bold;
+    background-color: rgba(224, 224, 224, 0.9);
+    cursor: default;
+}
+
+.calendar-day.disabled {
+    background-color: rgba(240, 240, 240, 0.9);
+    color: #999999;
+    pointer-events: none; /* Gör dagen oklickbar */
+}
+
+.calendar-day.selected {
+    background-color: #ffff00; /* Gul färg för markerat datum */
+    color: #000000;
+}
+
+.calendar-day.fullbooked {
+    background-color: rgba(255, 204, 204, 0.9); /* Ljus röd färg för fullbokade dagar */
+    color: #cc0000;
+}
+
+.calendar-day:hover:not(.disabled) {
+    background-color: #e6e6e6;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .booking-hero .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .booking-hero .hero-content p {
+        font-size: 20px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    /* Anpassa kalenderns storlek */
+    #calendar {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .calendar-day {
+        padding: 5px;
+    }
+}

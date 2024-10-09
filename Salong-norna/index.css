@@ -1,0 +1,176 @@
+/* index.css */
+
+/* Importera Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* Grundläggande stilar */
+body {
+    margin: 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Header och navigering */
+header {
+    background-color: #000000;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffff00; /* Gul text */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #98ff98; /* Mintgrön vid hover */
+}
+
+/* Hero-sektionen */
+.hero {
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero .hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.hero .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero .hero-content p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    background-color: #ffff00; /* Gul knapp */
+    color: #000000;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ffd700; /* Mörkare gul vid hover */
+    transform: translateY(-2px);
+}
+
+/* Tjänster-sektionen */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.service {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.service-image {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.service-text {
+    width: 50%;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.service-text h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.service-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 20px;
+    }
+
+    .service {
+        flex-direction: column;
+    }
+
+    .service-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .service-text {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .services h2 {
+        font-size: 28px;
+    }
+
+    .service-text h3 {
+        font-size: 24px;
+    }
+
+    .service-text p {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Boka Nu - Norna Massage Salong</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startsida</a></li>
+                <li><a href="#">Om oss</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="booking-hero">
+            <img src="norna-omslag.png" alt="Norna Massage Salong" class="hero-image">
+            <div class="hero-content">
+                <h1>Boka din tid hos Norna Massage Salong</h1>
+                <p>Välj datum och tid för din avkopplande massageupplevelse.</p>
+            </div>
+        </section>
+
+        <section class="booking">
+            <form id="booking-form">
+                <!-- Datumval -->
+                <div class="form-group">
+                    <label for="date">Välj datum:</label>
+                    <div id="calendar-container">
+                        <div id="calendar-overlay"></div> <!-- Lägg till denna rad för överlagringen -->
+                        <div id="calendar-content"> <!-- Lägg till denna rad för att omsluta kalenderns innehåll -->
+                            <div id="calendar-header">
+                                <button type="button" id="prev-month">&lt;</button>
+                                <h3 id="month-year"></h3>
+                                <button type="button" id="next-month">&gt;</button>
+                            </div>
+                            <div id="calendar">
+                                <!-- Kalendern kommer att genereras här -->
+                            </div>
+                        </div> <!-- Stängning av #calendar-content -->
+                    </div>
+                    <!-- Dold input för att lagra valt datum -->
+                    <input type="hidden" id="date" name="date">
+                </div>
+
+                <!-- Tidsval -->
+                <div class="form-group">
+                    <label for="time">Välj tid:</label>
+                    <select id="time" name="time">
+                        <!-- Tider kommer att fyllas i baserat på valt datum -->
+                    </select>
+                </div>
+
+                <!-- Massörval -->
+                <div class="form-group">
+                    <label for="masseuse">Välj massör:</label>
+                    <select id="masseuse" name="masseuse">
+                        <option value="Estelle Saad">Estelle Asad</option>
+                        <option value="Massör 2">Tao Nguyen</option>
+                        <option value="Massör 3">Thoman Bjelke</option>
+                        <option value="Massör 4">Zowad Masoudi (Semester)</option>
+                    </select>
+                </div>
+
+                <!-- Massagetyp -->
+                <div class="form-group">
+                    <label for="massage-type">Välj massagetyp:</label>
+                    <select id="massage-type" name="massage-type">
+                        <option value="sensuell">Sensuell massage</option>
+                        <option value="tantra">Tantra-influerad Terapi</option>
+                    </select>
+                </div>
+
+                <!-- Tid -->
+                <div class="form-group">
+                    <label for="duration">Välj tid:</label>
+                    <select id="duration" name="duration">
+                        <option value="30">30 minuter</option>
+                        <option value="60">60 minuter</option>
+                        <option value="90">90 minuter</option>
+                    </select>
+                </div>
+
+                <!-- Totalpris -->
+                <div class="form-group">
+                    <label for="total-price">Totalpris:</label>
+                    <input type="text" id="total-price" name="total-price" readonly>
+                </div>
+
+                <!-- Skicka -->
+                <button type="submit">Boka tid</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Norna Massage Salong</p>
+    </footer>
+
+    <script src="booking.js"></script>
+</body>
+</html>
